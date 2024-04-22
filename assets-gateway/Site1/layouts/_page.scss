@@ -1,0 +1,35 @@
+$select: ".page" !default;
+
+// config
+@use "./../config/queries";
+@use "./../config/fonts";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/space";
+@use "./../abstracts/text";
+@use "./../abstracts/section";
+
+@mixin base {
+	#{$select} {
+		&-title {
+			@include text.section-title {
+				margin: 0;
+			}
+		}
+
+		&-width {
+			@include section.container;
+
+			@include space.between-flow-elements($gap: 1rem) {
+			}
+
+			.rte {
+				@include space.between-flow-elements($gap: 1rem) {
+				}
+			}
+		}
+
+		@content;
+	}
+}

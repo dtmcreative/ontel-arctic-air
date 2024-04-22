@@ -1,0 +1,282 @@
+<main aria-labelledby="main-title" class="view main-offer section">
+  <picture class="main-offer__bkg">
+    <source srcset="{{ 'bkg-white-waves.webp' | asset_url }}" type="image/webp">
+    <img src="{{ 'bkg-white-waves.jpg' | asset_url }}" alt="">
+  </picture>
+  <div id="main" class="view__anchor"></div>
+  <div class="view__in main-offer__in section__in">
+    <div class="main-offer__group">
+      <div class="main-offer__info">
+        <div class="main-offer__price-group">
+          <div class="main-offer__header">
+            <b class="banner banner--ribbon">
+              <span>Limited Time Offer</span>
+            </b>
+          </div>
+          <h1 id="main-title" class="main-offer__double-offer">Double Offer</h1>
+          <div class="main-offer__price">
+            <div class="sr">
+              <div class="sr__text">Now Only $59.99</div>
+              <div class="offer" aria-hidden="true" role="presentation">
+                <span class="offer__standfirst">Now Only</span>
+                <span class="offer__currency">$</span>
+                <span class="offer__amt">59</span>
+                <span class="offer__follow">
+                  <span class="offer__cent">99</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <picture class="main-offer__shipping-truck">
+            <source srcset="{{ 'free-shipping-truck.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'free-shipping-truck.png' | asset_url }}" alt="Free Shipping" width="135" height="62">
+          </picture>
+          <div class="main-offer__product">
+            <div class="main-offer__text-box"><b class="main-offer__title">50% Off</b> The 2nd {{ shop.name }}</div>
+            <picture class="main-offer__product-beauty-shot">
+              <source srcset="{{ 'product-beauty-shot.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'product-beauty-shot.png' | asset_url }}" alt="{{ shop.name }}" width="328" height="238">
+            </picture>
+          </div>
+          <div class="main-offer__order">
+            <a
+              href="#order"
+              title="Order {{ shop.name }} Now!"
+              class="dtm-button"
+              >Order Now!</a
+            >
+            {% comment %}
+              <div class="main-offer__payment">
+              	<% Html.RenderPartial("GetPaymentIcons"); %>
+              </div>
+            {% endcomment %}
+          </div>
+          <picture class="main-offer__mbg">
+            <source srcset="{{ 'mbg.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'mbg.png' | asset_url }}" alt="90 day guarantee (less S,P,H & Fees)" width="142" height="61">
+          </picture>
+          <div class="main-offer__animation-video" data-view="desktop">
+            <div class="contain contain--video">
+              <iframe
+                src="https://player.vimeo.com/video/880535520?background=1&autopause=0"
+                width="266"
+                height="150"
+                loading="lazy"
+                title="Multi-Surface Animation | {{ shop.name }}"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-offer__content">
+        <div class="media-player">
+          <noscript>
+            <style>
+              .media__player {
+                display: none;
+              }
+            </style>
+          </noscript>
+          <div class="media-player__player">
+            <div class="media-player__video contain contain--video">
+              <iframe
+                src="https://player.vimeo.com/video/880532678"
+                width="400"
+                height="227"
+                loading="lazy"
+                title="Commercial | {{ shop.name }}"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="main-offer__icons">
+          <figure class="main-offer__icon">
+            <source srcset="{{ 'icon-lightweight.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'icon-lightweight.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
+            <figcaption>Lightweight</figcaption>
+          </figure>
+          <figure class="main-offer__icon">
+            <source srcset="{{ 'icon-ergonomic.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'icon-ergonomic.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
+            <figcaption>Ergonomic</figcaption>
+          </figure>
+          <figure class="main-offer__icon">
+            <source srcset="{{ 'icon-rechargeable.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'icon-rechargeable.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
+            <figcaption>Rechargeable</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="main-offer__animation-video" data-view="mobile">
+        <div class="contain contain--video">
+          <iframe
+            src="https://player.vimeo.com/video/880535520?background=1&autopause=0"
+            width="266"
+            height="150"
+            loading="lazy"
+            title="Multi-Surface Animation | {{ shop.name }}"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section aria-labelledby="features-benefits-title" class="view content content--picture-text section">
+  <div class="view__in section__in">
+    <div class="section__block content__block">
+      <div class="content__group">
+        <div class="content__picture features-benefits">
+          <h2 class="features-benefits__title"><span>360&deg;</span> Swivel Technology</h2>
+          <div class="contain contain--video">
+            <iframe
+              src="https://player.vimeo.com/video/880550607?background=1&autopause=0"
+              width="619"
+              height="355"
+              loading="lazy"
+              title="Animation | {{ shop.name }}"
+            ></iframe>
+          </div>
+        </div>
+        <div class="content__text view">
+          <div class="features-benefits">
+            <h2 id="features-benefits-title" class="features-benefits__title">Features <span>&</span> Benefits</h2>
+            <ul class="features-benefits__list">
+              <li><b>360 Swivel Tech:</b> Easily reach around, under, and between obstacles.</li>
+              <li><b>Anti-Clog Roller System:</b> Efficiently picks up and disposes of hair.</li>
+              <li><b>Micro Bristles at 1,200 RPMs:</b> For effective and rapid hair pick-up.</li>
+              <li><b>Multi-Surface Sliders:</b> Seamless transitions from one floor type to another.</li>
+              <li><b>Lightweight Design (Under 2lbs):</b> Easy portability and stair navigation.</li>
+              <li><b>Rechargeable Lithium-ion Battery:</b> Whole-house cleaning on a single charge.</li>
+            </ul>
+          </div>
+          <div class="view__anchor" id="features-benefits"></div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</section>
+
+<section aria-labelledby="intro-title" class="view content content--text-video section">
+  <div id="intro" class="view__anchor"></div>
+  <div class="view__in section__in">
+    <div class="section__block">
+      <div class="content__group">
+        <div class="content__text">
+          <h2 id="intro-title" class="content__title">
+            Introducing <b class="content__product-name">{{ shop.name }}</b>
+          </h2>
+          <p>
+            The revolutionary, ultra-light, cord-free cleaning sensation that's sweeping the nation! With its
+            game-changing 360&deg; swivel tech, you'll zoom around, beneath, and between furniture like never before!
+            Tired of tangled hair causing cleaning nightmares? <b class="content__product-name">{{ shop.name }}</b> is
+            here with its magic anti-clog roller! Watch as thousands of tiny, turbo-charged bristles whirl at a whopping
+            1,200 RPMs, making short work of any hairy mess.
+          </p>
+
+          <p>
+            <b>That's not all!</b> The smart edge-to-edge brush magically keeps the roller spotless, whisking hair
+            straight into the catch tray. Say goodbye to those pesky strands, whether they're from your furry friends or
+            family. Transitioning between surfaces? It&rsquo;s a breeze! Glide gracefully from room to room and watch as
+            <b class="content__product-name">{{ shop.name }}</b> hugs those baseboards for a pristine clean. Weighing in
+            at just under 2lbs, take it anywhere and everywhere &ndash; stairs? No problem! One click, and the tray is
+            empty. And guess what? Its powerful rechargeable battery ensures
+            <b class="content__product-name">{{ shop.name }}</b> goes the distance, cleaning your entire castle on just
+            one charge! <b>Don't wait! Dive into a new era of cleaning with {{ shop.name }}</b>!
+          </p>
+
+          <div class="content__button">
+            <a
+              href="#order"
+              title="Order {{ shop.name }} Now!"
+              class="dtm-button"
+              >Click Here To Order Now!</a
+            >
+          </div>
+        </div>
+        <figure class="content__video-text">
+          <figcaption>Equipped with Ingenious Anti-Clog Self Cleaning Roller System</figcaption>
+          <div class="contain contain--video content__video">
+            <iframe
+              src="https://player.vimeo.com/video/880537825?background=1&autopause=0"
+              loading="lazy"
+              width="434"
+              height="244"
+              frameborder="0"
+              title="Roller System Animation | {{ shop.name }}"
+            ></iframe>
+          </div>
+
+          <picture>
+            <source srcset="{{ 'negative.webp' | asset_url }}" type="image/webp">
+            <img
+              src="{{ 'negative.jpg' | asset_url }}"
+              alt=""
+              role="presentation"
+              width="434"
+              height="244"
+              loading="lazy"
+            >
+          </picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="testimonials-title" class="view testimonials section">
+  <div id="testimonials" class="view__anchor"></div>
+  <picture class="testimonials__bkg">
+    <source srcset="{{ 'bkg-white-waves.webp' | asset_url }}" type="image/webp">
+    <img src="{{ 'bkg-white-waves.jpg' | asset_url }}" alt="">
+  </picture>
+  <div class="view__in testimonials__in section__in">
+    <header class="testimonials__header section__block">
+      <h2 id="testimonials-title" class="testimonials__title">Don't Just Take Our Word For It.</h2>
+      <img src="{{ 'stars.svg' | asset_url }}" alt="5 Stars" width="222" height="35" loading="lazy">
+    </header>
+    <figure class="testimonials__card section__block">
+      <picture>
+        <source srcset="{{ 'review-photo-1.webp' | asset_url }}" type="image/webp">
+        <img
+          src="{{ 'review-photo-1.jpg' | asset_url }}"
+          alt="A young woman sitting inside in front of a corner lamp"
+          width="420"
+          height="295"
+          loading="lazy"
+        >
+      </picture>
+      <blockquote>
+        &ldquo;It will clean up messes right against the wall without scratching your baseboards or your floor.&rdquo;
+      </blockquote>
+    </figure>
+    <figure class="testimonials__card section__block">
+      <blockquote>
+        &ldquo;I have three daughters all styling their hair in one bathroom. {{ shop.name }} picks up all the hair,
+        it&rsquo;s very lightweight and very easy to use!&rdquo;
+      </blockquote>
+      <picture>
+        <source srcset="{{ 'review-photo-2.webp' | asset_url }}" type="image/webp">
+        <img
+          src="{{ 'review-photo-2.jpg' | asset_url }}"
+          alt="A young woman sitting inside in front of a sink and mirror"
+          width="420"
+          height="295"
+          loading="lazy"
+        >
+      </picture>
+    </figure>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Offer",
+  "settings": [],
+  "presets": [{ "name": "Main Offer" }],
+  "disabled_on": { "groups": ["header", "footer"] }
+}
+{% endschema %}
+{% stylesheet %} {% endstylesheet %}
+{% javascript %} {% endjavascript %}
