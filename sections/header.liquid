@@ -32,7 +32,7 @@
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
                 {{
                   settings.logo
-                  | image_url: width: 209
+                  | image_url: width: 229
                   | image_tag:
                     widths: widths,
                     height: logo_height,
@@ -48,10 +48,13 @@
           </a>
         </div>
       </div>
-      <div id="header-title" class="header__title">
-        <span>The Lightweight, Cordless, Anti-Clog Cleaning Tool</span>
-        <span>Unleash the Ultimate Cleaning Revolution!</span>
-      </div>
+      <img
+        class="header__title"
+        src="{{ 'headline.png' | asset_url }}"
+        alt="The Powerful, Personal Space Cooler! Enjoy Cool, Chilled Air...Anywhere!"
+        width="614"
+        height="75"
+      >
       <div class="header__action">
         <a href="#order" class="dtm-button dtm-button--circular"><span>Order Now</span></a>
       </div>

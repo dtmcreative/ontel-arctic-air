@@ -1,43 +1,34 @@
-<main aria-labelledby="main-title" class="view main-offer section">
-  <picture class="main-offer__bkg">
-    <source srcset="{{ 'bkg-white-waves.webp' | asset_url }}" type="image/webp">
-    <img src="{{ 'bkg-white-waves.jpg' | asset_url }}" alt="">
-  </picture>
+<main aria-label="Main offer" class="view main-offer main-offer--container section">
   <div id="main" class="view__anchor"></div>
   <div class="view__in main-offer__in section__in">
     <div class="main-offer__group">
-      <div class="main-offer__info">
+      <div class="main-offer__offer">
+        <div class="main-offer__header">
+          <h1 class="main-offer__title" id="main-title"><b>Double Offer</b><sup>*</sup></h1>
+          <small>*Just pay a separate $19.99 fee for 2nd unit</small>
+        </div>
         <div class="main-offer__price-group">
-          <div class="main-offer__header">
-            <b class="banner banner--ribbon">
-              <span>Limited Time Offer</span>
-            </b>
-          </div>
-          <h1 id="main-title" class="main-offer__double-offer">Double Offer</h1>
           <div class="main-offer__price">
             <div class="sr">
-              <div class="sr__text">Now Only $59.99</div>
+              <div class="sr__text">Now Only $39.99</div>
               <div class="offer" aria-hidden="true" role="presentation">
                 <span class="offer__standfirst">Now Only</span>
                 <span class="offer__currency">$</span>
-                <span class="offer__amt">59</span>
+                <span class="offer__amt">39</span>
                 <span class="offer__follow">
                   <span class="offer__cent">99</span>
                 </span>
               </div>
             </div>
           </div>
-          <picture class="main-offer__shipping-truck">
+          <picture class="main-offer__free-shipping-icon">
             <source srcset="{{ 'free-shipping-truck.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'free-shipping-truck.png' | asset_url }}" alt="Free Shipping" width="135" height="62">
+            <img src="{{ 'free-shipping-truck.png' | asset_url }}" alt="Free Shipping" width="127" height="84">
           </picture>
-          <div class="main-offer__product">
-            <div class="main-offer__text-box"><b class="main-offer__title">50% Off</b> The 2nd {{ shop.name }}</div>
-            <picture class="main-offer__product-beauty-shot">
-              <source srcset="{{ 'product-beauty-shot.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'product-beauty-shot.png' | asset_url }}" alt="{{ shop.name }}" width="328" height="238">
-            </picture>
-          </div>
+          <picture class="main-offer__mbg">
+            <source srcset="{{ 'mbg.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'mbg.png' | asset_url }}" alt="60 Day Money Back Guarantee" width="105" height="105">
+          </picture>
           <div class="main-offer__order">
             <a
               href="#order"
@@ -45,77 +36,48 @@
               class="dtm-button"
               >Order Now!</a
             >
-            {% comment %}
-              <div class="main-offer__payment">
-              	<% Html.RenderPartial("GetPaymentIcons"); %>
-              </div>
-            {% endcomment %}
+            <div class="main-offer__payment"></div>
           </div>
-          <picture class="main-offer__mbg">
-            <source srcset="{{ 'mbg.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'mbg.png' | asset_url }}" alt="90 day guarantee (less S,P,H & Fees)" width="142" height="61">
+        </div>
+        <div class="main-offer__product">
+          <img src="{{ 'bg-ice.png' | asset_url }}" class="main-offer__product-bg" alt="" role="presentation">
+          <picture class="main-offer__product-shot">
+            <source srcset="{{ 'main-product.webp' | asset_url }}" type="image/webp">
+            <img
+              src="{{ 'main-product.png' | asset_url }}"
+              alt="{{ shop.name }}, runs up to 12 hours per fill!*"
+              width="512"
+              height="272"
+            >
           </picture>
-          <div class="main-offer__animation-video" data-view="desktop">
-            <div class="contain contain--video">
-              <iframe
-                src="https://player.vimeo.com/video/880535520?background=1&autopause=0"
-                width="266"
-                height="150"
-                loading="lazy"
-                title="Multi-Surface Animation | {{ shop.name }}"
-              ></iframe>
-            </div>
-          </div>
         </div>
       </div>
       <div class="main-offer__content">
-        <div class="media-player">
-          <noscript>
-            <style>
-              .media__player {
-                display: none;
-              }
-            </style>
-          </noscript>
-          <div class="media-player__player">
-            <div class="media-player__video contain contain--video">
-              <iframe
-                src="https://player.vimeo.com/video/880532678"
-                width="400"
-                height="227"
-                loading="lazy"
-                title="Commercial | {{ shop.name }}"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="main-offer__icons">
-          <figure class="main-offer__icon">
-            <source srcset="{{ 'icon-lightweight.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'icon-lightweight.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
-            <figcaption>Lightweight</figcaption>
-          </figure>
-          <figure class="main-offer__icon">
-            <source srcset="{{ 'icon-ergonomic.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'icon-ergonomic.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
-            <figcaption>Ergonomic</figcaption>
-          </figure>
-          <figure class="main-offer__icon">
-            <source srcset="{{ 'icon-rechargeable.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'icon-rechargeable.png' | asset_url }}" role="presentation" alt="" width="108" height="108">
-            <figcaption>Rechargeable</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="main-offer__animation-video" data-view="mobile">
-        <div class="contain contain--video">
+        <div id="video" class="contain contain--video">
           <iframe
-            src="https://player.vimeo.com/video/880535520?background=1&autopause=0"
-            width="266"
-            height="150"
             loading="lazy"
-            title="Multi-Surface Animation | {{ shop.name }}"
+            src="https://player.vimeo.com/video/828461998?autopause=0"
+            frameborder="0"
+            allow="fullscreen"
+            title="{{ shop.name }} video"
+            allowfullscreen
           ></iframe>
+        </div>
+        <div class="main-offer main-offer--benefits">
+          <div class="main-offer__group">
+            <figure class="main-offer__figure">
+              <img src="{{ 'cool.png' | asset_url }}" alt="" width="112" height="112">
+              <figcaption>Cool</figcaption>
+            </figure>
+            <figure class="main-offer__figure">
+              <img src="{{ 'humidify.png' | asset_url }}" alt="" width="112" height="112">
+              <figcaption>Humidify</figcaption>
+            </figure>
+            <figure class="main-offer__figure">
+              <img src="{{ 'quiet.png' | asset_url }}" alt="" width="112" height="113">
+              <figcaption>Quiet</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </div>
@@ -123,38 +85,172 @@
 </main>
 
 <section aria-labelledby="features-benefits-title" class="view content content--picture-text section">
+  <div id="features-benefits" class="view__anchor"></div>
   <div class="view__in section__in">
     <div class="section__block content__block">
       <div class="content__group">
-        <div class="content__picture features-benefits">
-          <h2 class="features-benefits__title"><span>360&deg;</span> Swivel Technology</h2>
-          <div class="contain contain--video">
-            <iframe
-              src="https://player.vimeo.com/video/880550607?background=1&autopause=0"
-              width="619"
-              height="355"
-              loading="lazy"
-              title="Animation | {{ shop.name }}"
-            ></iframe>
+        <div class="content__picture">
+          <div class="slide slide--fade">
+            <div class="slide__into" tabindex="0" id="features-slider">
+              <div class="slide__item">
+                <picture>
+                  <source srcset="{{ 'features-1.webp' | asset_url }}" type="image/webp">
+                  <img src="{{ 'features-1.png' | asset_url }}" alt="Advanced and powerful cooling!">
+                </picture>
+              </div>
+              <div class="slide__item">
+                <picture>
+                  <source srcset="{{ 'features-2.webp' | asset_url }}" type="image/webp">
+                  <img src="{{ 'features-2.png' | asset_url }}" alt="Get maximum cooling on" width="614" height="318">
+                </picture>
+              </div>
+            </div>
+            <div class="slide__nav">
+              <button aria-label="Previous" class="slide__prev" type="button">
+                <svg class="icon">
+                  <use href="#icon-chevron"></use>
+                </svg>
+              </button>
+              <button aria-label="Next" class="slide__next" type="button">
+                <svg class="icon">
+                  <use href="#icon-chevron"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="content__text view">
+        <div class="content__text">
           <div class="features-benefits">
-            <h2 id="features-benefits-title" class="features-benefits__title">Features <span>&</span> Benefits</h2>
+            <h2 id="features-benefits-title" class="features-benefits__title">Features &amp; Benefits</h2>
             <ul class="features-benefits__list">
-              <li><b>360 Swivel Tech:</b> Easily reach around, under, and between obstacles.</li>
-              <li><b>Anti-Clog Roller System:</b> Efficiently picks up and disposes of hair.</li>
-              <li><b>Micro Bristles at 1,200 RPMs:</b> For effective and rapid hair pick-up.</li>
-              <li><b>Multi-Surface Sliders:</b> Seamless transitions from one floor type to another.</li>
-              <li><b>Lightweight Design (Under 2lbs):</b> Easy portability and stair navigation.</li>
-              <li><b>Rechargeable Lithium-ion Battery:</b> Whole-house cleaning on a single charge.</li>
+              <li>Helps Cool and Humidify Air for Increased Comfort</li>
+              <li>Hydro-Chill&reg; Technology Helps Cool Down Hot, Dry Air</li>
+              <li>Replaceable Cooling Cartridge</li>
+              <li>4 Quiet Speeds - Low, Medium, High, and Turbo</li>
+              <li>Can Run For Up to 12 Hours Per Tank Fill*</li>
+              <li>LED Nightlight</li>
+              <li>Quiet Operation</li>
+              <li>Lightweight and Portable</li>
             </ul>
           </div>
-          <div class="view__anchor" id="features-benefits"></div>
         </div>
       </div>
     </div>
-    <hr>
+  </div>
+</section>
+
+<section aria-labelledby="in-use-title" class="view content content--in-use section">
+  <div id="in-use" class="view__anchor"></div>
+  <div class="view__in section__in">
+    <h2 id="in-use-title" class="content__title">
+      <picture>
+        <source srcset="{{ 'cool-title--mobile.png' | asset_url }}" media="(max-width: 650px)">
+        <img
+          src="{{ 'cool-title.png' | asset_url }}"
+          loading="lazy"
+          alt="Enjoy hours of cool and refreshing air"
+          width="961"
+          height="57"
+        >
+      </picture>
+    </h2>
+    <div class="slide slide--responsive">
+      <div class="slide__into" tabindex="0" id="use-slider">
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-1.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-1.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Bedroom</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-2.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-2.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Living Room</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-3.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-3.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Kitchen</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-4.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-4.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Workshop and Garage</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-5.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-5.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Camping</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-6.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-6.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Working Out</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-7.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-7.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Kid's Room</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-8.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-8.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Grilling</figcaption>
+          </figure>
+        </div>
+        <div class="slide__item">
+          <figure>
+            <picture>
+              <source srcset="{{ 'use-9.webp' | asset_url }}" type="image/webp">
+              <img src="{{ 'use-9.png' | asset_url }}" alt="" width="279" height="197">
+            </picture>
+            <figcaption>Poolside &amp; More!</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="slide__nav">
+        <button aria-label="Previous" class="slide__prev" type="button">
+          <svg class="icon">
+            <use href="#icon-chevron"></use>
+          </svg>
+        </button>
+        <button aria-label="Next" class="slide__next" type="button">
+          <svg class="icon">
+            <use href="#icon-chevron"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -164,109 +260,65 @@
     <div class="section__block">
       <div class="content__group">
         <div class="content__text">
-          <h2 id="intro-title" class="content__title">
-            Introducing <b class="content__product-name">{{ shop.name }}</b>
+          <h2 id="intro-title" class="content__title <%= titleClass %>">
+            Introducing
+            <b>{{ shop.name }}</b>
           </h2>
           <p>
-            The revolutionary, ultra-light, cord-free cleaning sensation that's sweeping the nation! With its
-            game-changing 360&deg; swivel tech, you'll zoom around, beneath, and between furniture like never before!
-            Tired of tangled hair causing cleaning nightmares? <b class="content__product-name">{{ shop.name }}</b> is
-            here with its magic anti-clog roller! Watch as thousands of tiny, turbo-charged bristles whirl at a whopping
-            1,200 RPMs, making short work of any hairy mess.
+            The personal space cooler! Simply fill with water and turn it on. The secret is the Hydro-Chill&reg;
+            Technology that helps turn hot air into cooler, refreshing air...instantly! It has a quiet, four-speed fan,
+            multi-directional air vent, easy top-fill water tank, and 8 color light options. <b>{{ shop.name }}</b> is
+            lightweight and portable. It&rsquo;s great for bedrooms, living rooms, kitchens, offices, basements, and
+            more! Best of all, <b>{{ shop.name }}</b> can run for up to 12 hours per fill*, so you don&rsquo;t have to
+            worry about constantly adding water. Experience the cooling comfort of <b>{{ shop.name }}!</b>
           </p>
-
-          <p>
-            <b>That's not all!</b> The smart edge-to-edge brush magically keeps the roller spotless, whisking hair
-            straight into the catch tray. Say goodbye to those pesky strands, whether they're from your furry friends or
-            family. Transitioning between surfaces? It&rsquo;s a breeze! Glide gracefully from room to room and watch as
-            <b class="content__product-name">{{ shop.name }}</b> hugs those baseboards for a pristine clean. Weighing in
-            at just under 2lbs, take it anywhere and everywhere &ndash; stairs? No problem! One click, and the tray is
-            empty. And guess what? Its powerful rechargeable battery ensures
-            <b class="content__product-name">{{ shop.name }}</b> goes the distance, cleaning your entire castle on just
-            one charge! <b>Don't wait! Dive into a new era of cleaning with {{ shop.name }}</b>!
-          </p>
-
-          <div class="content__button">
+        </div>
+        <div class="content__video">
+          <div id="animation" class="contain contain--video">
+            <iframe
+              loading="lazy"
+              src="https://player.vimeo.com/video/808587831?autopause=0&background=1"
+              frameborder="0"
+              title="{{ shop.name }} animation"
+            ></iframe>
+          </div>
+          <div class="content__footer">
             <a
               href="#order"
-              title="Order {{ shop.name }} Now!"
               class="dtm-button"
-              >Click Here To Order Now!</a
+              >Click Here to Order Now</a
             >
           </div>
         </div>
-        <figure class="content__video-text">
-          <figcaption>Equipped with Ingenious Anti-Clog Self Cleaning Roller System</figcaption>
-          <div class="contain contain--video content__video">
-            <iframe
-              src="https://player.vimeo.com/video/880537825?background=1&autopause=0"
-              loading="lazy"
-              width="434"
-              height="244"
-              frameborder="0"
-              title="Roller System Animation | {{ shop.name }}"
-            ></iframe>
-          </div>
-
-          <picture>
-            <source srcset="{{ 'negative.webp' | asset_url }}" type="image/webp">
-            <img
-              src="{{ 'negative.jpg' | asset_url }}"
-              alt=""
-              role="presentation"
-              width="434"
-              height="244"
-              loading="lazy"
-            >
-          </picture>
-        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section aria-labelledby="testimonials-title" class="view testimonials section">
-  <div id="testimonials" class="view__anchor"></div>
-  <picture class="testimonials__bkg">
-    <source srcset="{{ 'bkg-white-waves.webp' | asset_url }}" type="image/webp">
-    <img src="{{ 'bkg-white-waves.jpg' | asset_url }}" alt="">
-  </picture>
-  <div class="view__in testimonials__in section__in">
-    <header class="testimonials__header section__block">
-      <h2 id="testimonials-title" class="testimonials__title">Don't Just Take Our Word For It.</h2>
-      <img src="{{ 'stars.svg' | asset_url }}" alt="5 Stars" width="222" height="35" loading="lazy">
-    </header>
-    <figure class="testimonials__card section__block">
-      <picture>
-        <source srcset="{{ 'review-photo-1.webp' | asset_url }}" type="image/webp">
-        <img
-          src="{{ 'review-photo-1.jpg' | asset_url }}"
-          alt="A young woman sitting inside in front of a corner lamp"
-          width="420"
-          height="295"
-          loading="lazy"
-        >
-      </picture>
-      <blockquote>
-        &ldquo;It will clean up messes right against the wall without scratching your baseboards or your floor.&rdquo;
-      </blockquote>
-    </figure>
-    <figure class="testimonials__card section__block">
-      <blockquote>
-        &ldquo;I have three daughters all styling their hair in one bathroom. {{ shop.name }} picks up all the hair,
-        it&rsquo;s very lightweight and very easy to use!&rdquo;
-      </blockquote>
-      <picture>
-        <source srcset="{{ 'review-photo-2.webp' | asset_url }}" type="image/webp">
-        <img
-          src="{{ 'review-photo-2.jpg' | asset_url }}"
-          alt="A young woman sitting inside in front of a sink and mirror"
-          width="420"
-          height="295"
-          loading="lazy"
-        >
-      </picture>
-    </figure>
+<section aria-label="No need to deal with these problems!" class="view content content--negative section">
+  <div id="negative" class="view__anchor"></div>
+  <div class="view__in section__in">
+    <div class="section__block">
+      <div class="content__group">
+        <figure>
+          <figcaption>
+            Save Money <br>
+            on Energy Bills!
+          </figcaption>
+          <picture>
+            <source srcset="{{ 'no-1.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'no-1.png' | asset_url }}" alt="" width="420" height="240">
+          </picture>
+        </figure>
+        <figure>
+          <figcaption>Forget Bulky Fans that Just Blow Hot Air!</figcaption>
+          <picture>
+            <source srcset="{{ 'no-2.webp' | asset_url }}" type="image/webp">
+            <img src="{{ 'no-2.png' | asset_url }}" alt="" width="420" height="240">
+          </picture>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 
