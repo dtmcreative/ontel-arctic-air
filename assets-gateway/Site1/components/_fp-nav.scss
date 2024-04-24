@@ -21,6 +21,10 @@ $select: ".fp-nav" !default;
         &__a {
             background: colors.get(primary);
 
+            &::before {
+				background-image: url(fingerprint.svg);
+			}
+
             &:hover,
             &:focus {
                 background: colors.get(primary-dark);

@@ -12,6 +12,8 @@ $select: ".order" !default;
 
 @mixin base {
     #{$select} {
+        overflow: hidden;
+        
         &__group {
             @include group.contain;
             justify-content: space-around;
@@ -30,20 +32,26 @@ $select: ".order" !default;
         &__title {
             text-transform: uppercase;
 
-            font: 900 fonts.cascade-em(72) / 1.15 fonts.get(secondary);
+            font: 900 fonts.cascade-em(72) / .85 fonts.get(secondary);
             color: #dc3937;
 
             @media all and (max-width: queries.get(document-mobile-portrait)) {
-                font-size: fonts.em(30);
+                // font-size: fonts.em(30);
             }
         }
 
         &__callout {
             font-size: fonts.em(20);
             font-weight: 500;
+
+			margin-top: 1rem;
             b {
                 font-weight: bold;
                 color: #0761d8;
+            }
+
+            a {
+                display: inline-block;
             }
         }
 
@@ -62,6 +70,18 @@ $select: ".order" !default;
 
 @mixin responsive {
     #{$select} {
+        @media all and (max-width: #{queries.section-container($length: 950)}) {
+            &__title {
+                max-width: 20ch;
+                margin-inline: auto;
+            }    
+
+            &__callout {
+                max-width: 37ch;
+                margin-inline: auto;
+            }
+        }
+
         @media all and (min-width: queries.get(document-mobile-portrait)) {
 			[data-view="mobile"] {
 				display: none;
@@ -87,7 +107,7 @@ $select: ".order" !default;
 
         @media all and (max-width: queries.get(document-mobile-portrait)) {
             &__header {
-                font-size: 3vw;
+                font-size: min(3vw, 1em);
             }
 
             &__form {

@@ -16,6 +16,7 @@ $select: ".footer" !default;
 
         background: linear-gradient(to right, #1e3799 0%, #1b63c2 50%, #1e3799 100%);
         color: white;
+        --color-body-text: white;
 
         nav {
             @include list.structure($offset: 0);

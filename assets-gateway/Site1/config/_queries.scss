@@ -16,3 +16,7 @@ $list: (
 @function set($pixel) {
     @return convert.to-rem($pixel, $media: true);
 }
+
+@function section-container($length: 1100, $frame: 1rem) {
+    @return calc(#{set($length)} + (#{$frame} * 2));
+}

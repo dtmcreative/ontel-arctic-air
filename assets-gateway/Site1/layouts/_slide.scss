@@ -41,7 +41,8 @@ $select: ".slide" !default;
     #{$select} {
         @media all and (max-width: queries.get(document-mobile-portrait)) {
             &__nav {
-                justify-content: space-around;
+                justify-content: center;
+                gap: 1rem;
                 margin: 0.5em 0;
                 button {
                     padding: 1em;
@@ -94,8 +95,9 @@ $select: ".slide" !default;
                 }
                 @media all and (max-width: 1000px) {
                     &__nav {
-                        justify-content: space-around;
+                        justify-content: center;
                         margin: 0.5em 0;
+                        gap: 1rem;
                     }
                     &__prev,
                     &__next {

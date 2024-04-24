@@ -16,7 +16,7 @@ $select: ".offer" !default;
     @include offer.base;
 
     #{$select} {
-        color: currentColor;
+        color: #3c434e;
 
         font-size: 3.75em;
         font-family: fonts.get(secondary);

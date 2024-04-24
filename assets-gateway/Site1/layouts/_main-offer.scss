@@ -50,7 +50,7 @@ $select: ".main-offer" !default;
 			> b {
 				font-size: fonts.cascade-em(84);
 				font-weight: 900;
-				color: colors.get(primary);
+				color: #3c434e;
 				text-transform: uppercase;
                 line-height: .8;
 			}
@@ -114,6 +114,8 @@ $select: ".main-offer" !default;
 			flex-basis: 100%;
 			font-size: 0.5em;
 			margin-top: 1em;
+
+            display: none;
 		}
 
 		&__button {
@@ -184,8 +186,14 @@ $select: ".main-offer" !default;
 		}
 
 		@media all and (max-width: queries.get(document-mobile-portrait)) {
-			font-size: 2.5vw;
+			font-size: 3vw;
 		}
+
+        @media all and (max-width: #{queries.section-container($length: 730)}) {
+            &__header {
+                flex-basis: 100%;
+            }
+        }
 
 		@content;
 	}
@@ -238,6 +246,7 @@ $select: ".main-offer" !default;
 					font-size: fonts.em(22);
 					@media all and (max-width: queries.get(document-mobile-portrait)) {
 						font-size: 5vw;
+						display: block;
 						img {
 							width: 5em;
 							height: 5em;

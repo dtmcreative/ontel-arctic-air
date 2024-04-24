@@ -537,6 +537,7 @@ address {
   text-align: center;
   background: linear-gradient(to right, #1e3799 0%, #1b63c2 50%, #1e3799 100%);
   color: white;
+  --color-body-text: white;
 }
 .footer nav {
   margin-left: 0;
@@ -639,12 +640,15 @@ address {
   }
 }
 .content__title {
-  font-size: 3.25em;
+  font-size: clamp(1.875em, 8vw, 3.25em);
   font-family: bebas-neue-pro, Helvetica, sans-serif;
   line-height: 1;
 }
 .content__text > * + * {
   margin-top: 1rem;
+}
+.content p {
+  font-size: inherit;
 }
 
 .content--sub-page {
@@ -895,7 +899,7 @@ address {
 }
 
 .offer {
-  color: currentColor;
+  color: #3c434e;
   font-size: 3.75em;
   font-family: bebas-neue-pro, Helvetica, sans-serif;
 }
@@ -1046,6 +1050,9 @@ address {
 .fp-nav__a {
   background: #0761d8;
 }
+.fp-nav__a::before {
+  background-image: url(fingerprint.svg);
+}
 .fp-nav__a:hover, .fp-nav__a:focus {
   background: #2a4d64;
 }
@@ -1091,8 +1098,9 @@ address {
 .features-benefits__list {
   max-width: 25em;
   text-align: left;
-  font-size: 1.25em;
+  font-size: 1.1875em;
   font-weight: 500;
+  margin-top: 0;
   margin-left: 1.5rem;
   list-style: none;
 }
@@ -1501,7 +1509,8 @@ address {
 
 @media all and (max-width: 40rem) {
   .slide__nav {
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
     margin: 0.5em 0;
   }
   .slide__nav button {
@@ -1558,8 +1567,9 @@ address {
 }
 @media all and (max-width: 1000px) {
   .slide--responsive .slide__nav {
-    justify-content: space-around;
+    justify-content: center;
     margin: 0.5em 0;
+    gap: 1rem;
   }
   .slide--responsive .slide__prev, .slide--responsive .slide__next {
     padding: 1em;
@@ -1642,7 +1652,7 @@ address {
 .main-offer__title > b {
   font-size: calc(5.25em / var(--base-number, 1));
   font-weight: 900;
-  color: #0761d8;
+  color: #3c434e;
   text-transform: uppercase;
   line-height: 0.8;
 }
@@ -1694,6 +1704,7 @@ address {
   flex-basis: 100%;
   font-size: 0.5em;
   margin-top: 1em;
+  display: none;
 }
 .main-offer__button {
   width: auto;
@@ -1754,7 +1765,12 @@ address {
 }
 @media all and (max-width: 40rem) {
   .main-offer {
-    font-size: 2.5vw;
+    font-size: 3vw;
+  }
+}
+@media all and (max-width: calc(45.625rem + (1rem * 2))) {
+  .main-offer__header {
+    flex-basis: 100%;
   }
 }
 
@@ -1801,6 +1817,7 @@ address {
 @media all and (max-width: 40rem) {
   .main-offer--benefits .main-offer__figure {
     font-size: 5vw;
+    display: block;
   }
   .main-offer--benefits .main-offer__figure img {
     width: 5em;
@@ -1816,13 +1833,13 @@ address {
   margin-bottom: 0;
 }
 .content--picture-text .content__group {
-  --group-gap: 0.5rem;
+  --group-gap: 1rem;
 }
 .content--picture-text .content__picture {
   flex-basis: 40em;
 }
 .content--picture-text .content__text {
-  flex-basis: 25em;
+  flex-basis: 24em;
 }
 @media all and (max-width: 60rem) {
   .content--picture-text .content__text {
@@ -1924,6 +1941,7 @@ address {
   --base-number: 2.5;
   --base-font-size: calc(var(--base-number, 1) * 1rem);
   font-size: var(--base-font-size);
+  font-size: clamp(1em, 7vw, var(--base-font-size));
   font-family: bebas-neue-pro, Helvetica, sans-serif;
   margin: 0 0 0.75em;
   display: flex;
@@ -1957,6 +1975,13 @@ address {
 }
 .dtm__in .page-width .rte > * + * {
   margin-top: 1rem;
+}
+.dtm__in .page-width [itemtype="https://schema.org/FAQPage"] > * + * {
+  margin-top: 2rem;
+}
+.dtm__in .page-width [itemprop=name] {
+  font-size: calc(1.25em / var(--base-number, 1));
+  margin-bottom: 0;
 }
 .dtm__in .shopify-policy__container {
   max-width: var(--section-container);
@@ -2802,6 +2827,9 @@ address {
   margin-top: 1rem;
 }
 
+.order {
+  overflow: hidden;
+}
 .order__group {
   display: flex;
   flex-wrap: wrap;
@@ -2826,21 +2854,20 @@ address {
 }
 .order__title {
   text-transform: uppercase;
-  font: 900 calc(4.5em / var(--base-number, 1))/1.15 bebas-neue-pro, Helvetica, sans-serif;
+  font: 900 calc(4.5em / var(--base-number, 1))/0.85 bebas-neue-pro, Helvetica, sans-serif;
   color: #dc3937;
-}
-@media all and (max-width: 40rem) {
-  .order__title {
-    font-size: 1.875em;
-  }
 }
 .order__callout {
   font-size: 1.25em;
   font-weight: 500;
+  margin-top: 1rem;
 }
 .order__callout b {
   font-weight: bold;
   color: #0761d8;
+}
+.order__callout a {
+  display: inline-block;
 }
 .order__form {
   flex-basis: 30em;
@@ -2850,6 +2877,16 @@ address {
   margin-top: 1em;
 }
 
+@media all and (max-width: calc(59.375rem + (1rem * 2))) {
+  .order__title {
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+  .order__callout {
+    max-width: 37ch;
+    margin-inline: auto;
+  }
+}
 @media all and (min-width: 40rem) {
   .order [data-view=mobile] {
     display: none;
@@ -2870,7 +2907,7 @@ address {
 }
 @media all and (max-width: 40rem) {
   .order__header {
-    font-size: 3vw;
+    font-size: min(3vw, 1em);
   }
   .order__form {
     margin-left: 0;
@@ -3234,6 +3271,16 @@ address {
   margin: -0.5rem -0.5rem 0.5rem;
 }
 
+@media all and (max-width: calc(59.375rem + (1rem * 2))) {
+  .dtm__in--mv .order__title {
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+  .dtm__in--mv .order__callout {
+    max-width: 37ch;
+    margin-inline: auto;
+  }
+}
 @media all and (min-width: 40rem) {
   .dtm__in--mv .order [data-view=mobile] {
     display: none;
@@ -3254,7 +3301,7 @@ address {
 }
 @media all and (max-width: 40rem) {
   .dtm__in--mv .order__header {
-    font-size: 3vw;
+    font-size: min(3vw, 1em);
   }
   .dtm__in--mv .order__form {
     margin-left: 0;
