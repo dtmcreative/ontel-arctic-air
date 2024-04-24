@@ -28,24 +28,31 @@ $select: ".main-offer" !default;
 			overflow: visible;
 		}
 
+        &__offer-group {
+            @include group.contain-flex($gap: 0.5rem) {};
+
+            padding-block: 1em;
+        }
+
 		&__header {
-			flex-basis: 100%;
+			flex-basis: 13em;
 			color: colors.get(base);
 		}
 
 		&__title {
 			@include fonts.base-em(12);
 			line-height: 1;
-			font-family: inherit;
+			font-family: fonts.get(secondary);
 			margin: 0;
 
 			position: relative;
 
 			> b {
-				font-size: fonts.cascade-em(64);
+				font-size: fonts.cascade-em(84);
 				font-weight: 900;
 				color: colors.get(primary);
 				text-transform: uppercase;
+                line-height: .8;
 			}
 
 			> sup {
@@ -59,15 +66,17 @@ $select: ".main-offer" !default;
 			justify-content: center;
 			align-items: center;
 			flex-wrap: wrap;
-			flex: 0 1 36.5em;
+			flex: 0 1 42.5em;
 		}
 
 		&__price-group {
+            flex-basis: 29em;
+
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
 			align-items: center;
-			margin: 1em auto;
+			margin: auto;
 			overflow: visible;
 			position: relative;
 			z-index: 3;
@@ -82,7 +91,7 @@ $select: ".main-offer" !default;
 		}
 
 		&__price {
-			flex: 0 1 15.5em;
+			flex: 0 1 10.5em;
 		}
 
 		&__mbg {
@@ -141,15 +150,14 @@ $select: ".main-offer" !default;
 		}
 
 		&__content {
-			flex: 0 1 30em;
+			flex: 0 1 queries.em(306);
 			iframe {
 				border: 1px solid black;
 			}
 		}
 
 		&__in {
-			padding-bottom: 0;
-			border-bottom: 2px solid colors.get(primary);
+			padding-block: 0;
 		}
 
 		@media all and (max-width: queries.set(1040)) {
@@ -223,6 +231,9 @@ $select: ".main-offer" !default;
 				}
 
 				&__figure {
+                    --group-align-items: center;
+                    @include group.contain-flex($gap: 0.5rem) {};
+
 					font-weight: bold;
 					font-size: fonts.em(22);
 					@media all and (max-width: queries.get(document-mobile-portrait)) {

@@ -22,19 +22,16 @@ $select: ".order" !default;
         &__header {
             padding: 2em;
 
-            font-size: 1.1em;
             font-family: fonts.get(primary);
             text-align: center;
             line-height: 1.25;
-
-            background: linear-gradient(to right, #1e3799 0%, #1b63c2 50%, #1e3799 100%);
-            color: white;
         }
 
         &__title {
             text-transform: uppercase;
 
-            font: 900 fonts.em(40) / 1.15 fonts.get(primary);
+            font: 900 fonts.cascade-em(72) / 1.15 fonts.get(secondary);
+            color: #dc3937;
 
             @media all and (max-width: queries.get(document-mobile-portrait)) {
                 font-size: fonts.em(30);
@@ -46,12 +43,12 @@ $select: ".order" !default;
             font-weight: 500;
             b {
                 font-weight: bold;
-                font-style: italic;
+                color: #0761d8;
             }
         }
 
         &__form {
-            flex-basis: 100%;
+            flex-basis: 30em;
         }
 
         &__offer-details {
@@ -65,6 +62,18 @@ $select: ".order" !default;
 
 @mixin responsive {
     #{$select} {
+        @media all and (min-width: queries.get(document-mobile-portrait)) {
+			[data-view="mobile"] {
+				display: none;
+			}
+		}
+
+		@media all and (max-width: queries.get(document-mobile-portrait)) {
+			[data-view="desktop"] {
+				display: none;
+			}
+		}
+
         @media all and (max-width: queries.set(800)) {
             &__form,
             &__offer-image {

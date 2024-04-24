@@ -23,12 +23,13 @@ $select: ".content" !default;
         }
 
         &__group {
-            @include group.contain;
+            @include group.contain-flex;
             justify-content: center;
         }
 
         &__title {
-            font-size: fonts.em(40);
+            font-size: fonts.em(52);
+            font-family: fonts.get(secondary);
             line-height: 1;
             color: colors.get(accent);
         }
@@ -75,7 +76,7 @@ $select: ".content" !default;
                 }
 
                 &__group {
-                    @include group.gutter(1rem);
+                    --group-gap: 0.5rem;
                 }
 
                 &__picture {
@@ -83,7 +84,7 @@ $select: ".content" !default;
                 }
 
                 &__text {
-                    flex-basis: 26em;
+                    flex-basis: 25em;
                 }
 
                 @media all and (max-width: queries.set(960)) {
@@ -103,9 +104,9 @@ $select: ".content" !default;
     #{$select} {
         &--in-use {
 
-            background: linear-gradient(to right, #1e3799 0%, #1b63c2 50%, #1e3799 100%);
-            color: white;
-            padding-bottom: 2em;
+            background: #99eb8b;
+            color: #2a4d64;
+            padding-block: 2em;
 
             figure {
                 margin: 1.5em auto;
@@ -126,6 +127,10 @@ $select: ".content" !default;
                         margin: 1em auto 0;
                     }
                 }
+
+                &__carousel {
+                    margin-bottom: 2rem;
+                }
             }
 
             @content;
@@ -139,7 +144,7 @@ $select: ".content" !default;
 
             @include background.color-map(
                 colors.get(alt),
-                colors.get(base-light)
+                colors.get(primary-dark)
             );
 
             figure {
@@ -148,8 +153,18 @@ $select: ".content" !default;
             }
 
             figcaption {
-                font: bold italic fonts.em(30)/1.2 fonts.get(primary);
+                @include fonts.base-rem(40);
+                font-family: fonts.get(secondary);
                 margin: 0 0 0.75em;
+
+                display: flex;
+                flex-direction: column;
+
+                > b {
+                    font-size: fonts.cascade-em(75);
+                    text-transform: uppercase;
+                    line-height: .85;
+                }
             }
             
             #{$select} {
@@ -177,23 +192,14 @@ $select: ".content" !default;
 
             #{$select} {
                 &__title {
-                    font-size: fonts.em(30);
-                    font-style: italic;
+                    font-size: fonts.em(34);
                     font-weight: bold;
                     line-height: 1.2;
-                    b {
-                        display: block;
-                        color: colors.get(primary);
-                    }
-                    &--no-split {
-                        b {
-                            display: inline-block;
-                        }
-                    }
+                    color: colors.get(primary);
                 }
                 &__group {
                     justify-content: space-around;
-                    align-items: center;
+                    // align-items: center;
                     @include group.gutter(1rem);
                 }
 
@@ -203,10 +209,12 @@ $select: ".content" !default;
                 }
 
                 &__video {
-                    flex-basis: queries.em(480);
+                    flex-basis: queries.em(426);
                     iframe {
                         border: 1px solid black;
                     }
+
+                    @include space.between-flow-elements($gap: 1rem) {};
                 }
 
                 &__footer {

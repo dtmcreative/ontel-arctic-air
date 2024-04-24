@@ -24,7 +24,10 @@
       <div class="header__logo">
         <div class="logo-text">
           <a href="{{ routes.root_url }}" class="logo-text__group">
-            {%- if settings.logo != blank -%}
+            <picture>
+                <img src="{{ 'logo.png' | asset_url }}" alt="Pure Chill" width="270" height="67" loading="lazy">
+            </picture>
+            {% comment %} {%- if settings.logo != blank -%}
               <picture>
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
@@ -44,7 +47,7 @@
               </picture>
             {%- else -%}
               {{ shop.name }}
-            {%- endif -%}
+            {%- endif -%} {% endcomment %}
           </a>
         </div>
       </div>
@@ -52,8 +55,8 @@
         class="header__title"
         src="{{ 'headline.png' | asset_url }}"
         alt="The Powerful, Personal Space Cooler! Enjoy Cool, Chilled Air...Anywhere!"
-        width="614"
-        height="75"
+        width="472"
+        height="87"
       >
       <div class="header__action">
         <a href="#order" class="dtm-button dtm-button--circular"><span>Order Now</span></a>

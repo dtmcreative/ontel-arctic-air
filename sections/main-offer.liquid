@@ -3,42 +3,48 @@
   <div class="view__in main-offer__in section__in">
     <div class="main-offer__group">
       <div class="main-offer__offer">
-        <div class="main-offer__header">
-          <h1 class="main-offer__title" id="main-title"><b>Double Offer</b><sup>*</sup></h1>
-          <small>*Just pay a separate $19.99 fee for 2nd unit</small>
-        </div>
-        <div class="main-offer__price-group">
-          <div class="main-offer__price">
-            <div class="sr">
-              <div class="sr__text">Now Only $39.99</div>
-              <div class="offer" aria-hidden="true" role="presentation">
-                <span class="offer__standfirst">Now Only</span>
-                <span class="offer__currency">$</span>
-                <span class="offer__amt">39</span>
-                <span class="offer__follow">
-                  <span class="offer__cent">99</span>
-                </span>
+        <b class="main-offer__banner banner banner--ribbon">
+            <span>Limited Time Offer!</span>
+        </b>
+        <div class="main-offer__offer-group">
+            <div class="main-offer__header">
+                <h1 class="main-offer__title" id="main-title"><b>Double Offer</b><sup>*</sup></h1>
+                <small>*Just pay a separate $19.99 fee for 2nd unit</small>
               </div>
-            </div>
-          </div>
-          <picture class="main-offer__free-shipping-icon">
-            <source srcset="{{ 'free-shipping-truck.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'free-shipping-truck.png' | asset_url }}" alt="Free Shipping" width="127" height="84">
-          </picture>
-          <picture class="main-offer__mbg">
-            <source srcset="{{ 'mbg.webp' | asset_url }}" type="image/webp">
-            <img src="{{ 'mbg.png' | asset_url }}" alt="60 Day Money Back Guarantee" width="105" height="105">
-          </picture>
-          <div class="main-offer__order">
-            <a
-              href="#order"
-              title="Order Pure Chill® 2.0 Now!"
-              class="dtm-button"
-              >Order Now!</a
-            >
-            <div class="main-offer__payment"></div>
-          </div>
+              <div class="main-offer__price-group">
+                <div class="main-offer__price">
+                  <div class="sr">
+                    <div class="sr__text">Now Only $39.99</div>
+                    <div class="offer" aria-hidden="true" role="presentation">
+                      <span class="offer__standfirst">Now Only</span>
+                      <span class="offer__currency">$</span>
+                      <span class="offer__amt">39</span>
+                      <span class="offer__follow">
+                        <span class="offer__cent">99</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <picture class="main-offer__free-shipping-icon">
+                  <source srcset="{{ 'free-shipping-truck.webp' | asset_url }}" type="image/webp">
+                  <img src="{{ 'free-shipping-truck.png' | asset_url }}" alt="Free Shipping" width="127" height="84">
+                </picture>
+                <picture class="main-offer__mbg">
+                  <source srcset="{{ 'mbg.webp' | asset_url }}" type="image/webp">
+                  <img src="{{ 'mbg.png' | asset_url }}" alt="60 Day Money Back Guarantee" width="105" height="105">
+                </picture>
+                <div class="main-offer__order">
+                  <a
+                    href="#order"
+                    title="Order Pure Chill® 2.0 Now!"
+                    class="dtm-button"
+                    >Order Now!</a
+                  >
+                  <div class="main-offer__payment"></div>
+                </div>
+              </div>
         </div>
+
         {% comment %}
           <div class="main-offer__product">
             <picture class="main-offer__product-shot">
@@ -72,7 +78,7 @@
 <section aria-labelledby="features-benefits-title" class="view content content--picture-text section">
   <div id="features-benefits" class="view__anchor"></div>
   <div class="view__in section__in">
-    <div class="section__block content__block">
+    <div class="content__block">
       <div class="content__group">
         <div class="content__picture">
           <div class="slide slide--fade">
@@ -173,102 +179,111 @@
   <div id="in-use" class="view__anchor"></div>
   <div class="view__in section__in">
     <h2 id="in-use-title" class="content__title">Helps Clean*, Cool and Humidify for Maximum Comfort!</h2>
-    <div class="slide slide--responsive">
-      <div class="slide__into" tabindex="0" id="use-slider">
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-1.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-1.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Dens</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-2.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-2.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Bedrooms</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-3.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-3.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Kitchens</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-4.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-4.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Offices</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-5.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-5.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Shops & Garages</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-6.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-6.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Even Outside!</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-7.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-7.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Living Rooms</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-8.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-8.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Reading Nooks</figcaption>
-          </figure>
-        </div>
-        <div class="slide__item">
-          <figure>
-            <picture>
-              <source srcset="{{ 'use-9.webp' | asset_url }}" type="image/webp">
-              <img src="{{ 'use-9.png' | asset_url }}" alt="" width="279" height="197">
-            </picture>
-            <figcaption>Kid's Room</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="slide__nav">
-        <button aria-label="Previous" class="slide__prev" type="button">
-          <svg class="icon">
-            <use href="#icon-chevron"></use>
-          </svg>
-        </button>
-        <button aria-label="Next" class="slide__next" type="button">
-          <svg class="icon">
-            <use href="#icon-chevron"></use>
-          </svg>
-        </button>
-      </div>
+    <div class="content__carousel">
+        <div class="slide slide--responsive">
+            <div class="slide__into" tabindex="0" id="use-slider">
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-1.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-1.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Dens</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-2.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-2.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Bedrooms</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-3.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-3.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Kitchens</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-4.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-4.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Offices</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-5.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-5.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Shops & Garages</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-6.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-6.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Even Outside!</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-7.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-7.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Living Rooms</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-8.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-8.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Reading Nooks</figcaption>
+                </figure>
+              </div>
+              <div class="slide__item">
+                <figure>
+                  <picture>
+                    <source srcset="{{ 'use-9.webp' | asset_url }}" type="image/webp">
+                    <img src="{{ 'use-9.png' | asset_url }}" alt="" width="279" height="197">
+                  </picture>
+                  <figcaption>Kid's Room</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="slide__nav">
+              <button aria-label="Previous" class="slide__prev" type="button">
+                <svg class="icon">
+                  <use href="#icon-chevron"></use>
+                </svg>
+              </button>
+              <button aria-label="Next" class="slide__next" type="button">
+                <svg class="icon">
+                  <use href="#icon-chevron"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+    </div>
+    <div class="content__footer">
+    <a
+        href="#order"
+        class="dtm-button"
+        >Click Here to Order Now</a
+    >
     </div>
   </div>
 </section>

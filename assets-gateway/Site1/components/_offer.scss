@@ -18,13 +18,14 @@ $select: ".offer" !default;
     #{$select} {
         color: currentColor;
 
-        font-size: 2.75em;
-        font-family: fonts.get(primary);
+        font-size: 3.75em;
+        font-family: fonts.get(secondary);
 
         &__standfirst {
             font-size: 0.5em;
             text-transform: uppercase;
             font-weight: 600;
+            margin-bottom: -0.25em;
         }
 
         &__currency,

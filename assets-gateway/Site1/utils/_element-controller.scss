@@ -9,6 +9,10 @@ $select: ".element-controller" !default;
     }
 
     #{$select} {
+        &__element[aria-hidden="false"] ~ &__element-relative {
+            display: none;
+        }
+        
         @content;
     }
 }

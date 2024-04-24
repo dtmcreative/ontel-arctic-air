@@ -34,6 +34,7 @@ $select: ".features-benefits" !default;
             text-align: center;
 
             font-size: fonts.em(26);
+            font-family: fonts.get(primary);
             font-weight: 700;
         }
 
@@ -41,9 +42,9 @@ $select: ".features-benefits" !default;
             max-width: 25em;
 
             text-align: left;
-            font-size: fonts.em(16);
+            font-size: fonts.em(20);
             font-weight: 500;
-            line-height: 1.2;
+            // line-height: 1.2;
 
             @include list.structure($gap: 0.75rem) ;
             @include list.bullet {

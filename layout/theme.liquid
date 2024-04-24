@@ -666,7 +666,7 @@
 
     <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
     <link rel="dns-prefetch" href="https://use.typekit.net/">
-    <link rel="stylesheet" href="https://use.typekit.net/qwl5wmf.css">
+    <link rel="stylesheet" href="https://use.typekit.net/heu5kgm.css">
 
     <link rel="stylesheet" href="{{ 'dtm.css' | asset_url }}">
 
@@ -684,17 +684,21 @@
 
     {% section 'header' %}
 
-    <div class="page-container drawer-page-content" id="PageContainer">
+    {{ content_for_layout }}
+
+    {% section 'footer' %}
+
+
+    {% comment %} <div class="page-container drawer-page-content" id="PageContainer">
       <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
-        {{ content_for_layout }}
+        
       </main>
 
-      {% section 'footer' %}
-
+      
       <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
         {{- 'sections.slideshow.navigation_instructions' | t -}}
       </div>
-    </div>
+    </div> {% endcomment %}
 
     <script type="application/json" data-cart-routes>
       {
