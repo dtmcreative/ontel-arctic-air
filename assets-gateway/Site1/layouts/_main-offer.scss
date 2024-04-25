@@ -248,8 +248,9 @@ $select: ".main-offer" !default;
 						font-size: 5vw;
 						display: block;
 						img {
-							width: 5em;
-							height: 5em;
+							// width: 5em;
+							// height: 5em;
+							margin-inline: auto;
 						}
 					}
 				}

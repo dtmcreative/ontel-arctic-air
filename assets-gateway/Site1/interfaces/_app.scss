@@ -10,6 +10,7 @@ $base: 1;
 @use "./../utils/section";
 @use "./../utils/hide";
 @use "./../utils/color";
+@use "./../utils/wrapper";
 
 // components
 @use "Shared/scss/templates/base/components/link";
@@ -36,6 +37,8 @@ $hasNav: false;
 
     @include hide.base;
     @include color.base;
+
+    @include wrapper.base;
 
     // components
     @include link.base;

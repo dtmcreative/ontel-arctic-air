@@ -174,6 +174,18 @@ html {
   color: #444;
 }
 
+.wrapper {
+  position: relative;
+  background: url(bg_l-outer.jpg) center top no-repeat #cfe5ef;
+  background-size: contain;
+}
+.wrapper__in {
+  max-width: calc(65.625rem + 2rem);
+  margin-inline: auto;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
 .link {
   position: relative;
 }
@@ -1098,7 +1110,7 @@ address {
 .features-benefits__list {
   max-width: 25em;
   text-align: left;
-  font-size: 1.1875em;
+  font-size: 1.125em;
   font-weight: 500;
   margin-top: 0;
   margin-left: 1.5rem;
@@ -1560,9 +1572,7 @@ address {
 }
 @media all and (min-width: 1000px) {
   .slide--responsive .slide__nav {
-    width: 106%;
     max-width: none;
-    left: -3%;
   }
 }
 @media all and (max-width: 1000px) {
@@ -1820,8 +1830,7 @@ address {
     display: block;
   }
   .main-offer--benefits .main-offer__figure img {
-    width: 5em;
-    height: 5em;
+    margin-inline: auto;
   }
 }
 

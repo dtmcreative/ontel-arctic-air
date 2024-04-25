@@ -88,9 +88,9 @@ $select: ".slide" !default;
                 }
                 @media all and (min-width: 1000px) {
                     &__nav {
-                        width: 106%;
+                        // width: 106%;
                         max-width: none;
-                        left: -3%;
+                        // left: -3%;
                     }
                 }
                 @media all and (max-width: 1000px) {

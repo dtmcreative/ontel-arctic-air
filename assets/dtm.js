@@ -17300,7 +17300,7 @@ var OfferController = /** @class */ (function (_super) {
     OfferController.prototype.handleOffer = function () {
         var _this = this;
         return _asyncToGenerator(function () {
-            var offerCheckbox, offerCombobox, singleOffer, doubleOffer, fee, changeToSingleOffer, changeToDoubleOffer, handleOfferQuantity, cart, singleItemInCart, doubleItemInCart;
+            var offerCheckbox, offerCombobox, singleOffer, doubleOffer, changeToSingleOffer, changeToDoubleOffer, handleOfferQuantity, cart, singleItemInCart, doubleItemInCart;
             return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__generator)(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -17310,22 +17310,19 @@ var OfferController = /** @class */ (function (_super) {
                         offerCombobox = _this.offerCombobox;
                         if (!offerCombobox)
                             return [2 /*return*/];
-                        return [4 /*yield*/, _this.products.getProductVariantBySku("VOOM59")];
+                        return [4 /*yield*/, _this.products.getProductVariantBySku("AAPC1")];
                     case 1:
                         singleOffer = _a.sent();
-                        return [4 /*yield*/, _this.products.getProductVariantBySku("VOOM59TV")];
+                        return [4 /*yield*/, _this.products.getProductVariantBySku("AAPC2")];
                     case 2:
                         doubleOffer = _a.sent();
-                        return [4 /*yield*/, _this.products.getProductVariantBySku("VOOM59FEE")];
-                    case 3:
-                        fee = _a.sent();
                         changeToSingleOffer = function (quantity) {
                             var _a;
                             _this.updateItems({
                                 updates: (_a = {},
                                     _a[singleOffer.id] = quantity,
-                                    _a[doubleOffer.id] = 0,
-                                    _a[fee.id] = 0,
+                                    _a[doubleOffer.id] = 0 // [fee.id]: 0
+                                ,
                                     _a)
                             });
                         };
@@ -17334,8 +17331,8 @@ var OfferController = /** @class */ (function (_super) {
                             _this.updateItems({
                                 updates: (_a = {},
                                     _a[singleOffer.id] = 0,
-                                    _a[doubleOffer.id] = quantity,
-                                    _a[fee.id] = quantity,
+                                    _a[doubleOffer.id] = quantity // [fee.id]: quantity
+                                ,
                                     _a)
                             });
                         };
@@ -17346,7 +17343,7 @@ var OfferController = /** @class */ (function (_super) {
                         offerCombobox.addEventListener("change", function (event) { return handleOfferQuantity(); });
                         offerCheckbox.addEventListener("change", function (event) { return handleOfferQuantity(); });
                         return [4 /*yield*/, _this.cart];
-                    case 4:
+                    case 3:
                         cart = _a.sent();
                         singleItemInCart = cart.items.find(function (item) { return item.variant_id === singleOffer.id; });
                         if (singleItemInCart) {
@@ -18038,7 +18035,6 @@ var OfferForm = /** @class */ (function (_super) {
                         form = _a.sent();
                         offer = new ts_utils_offer_controller__WEBPACK_IMPORTED_MODULE_14__["default"](form);
                         offer.handleOffer();
-                        offer.handleDeluxeOffer();
                         return [2 /*return*/];
                 }
             });

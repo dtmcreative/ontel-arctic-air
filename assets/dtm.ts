@@ -121,7 +121,6 @@ class OfferForm extends Form {
 		const offer = new OfferController(form);
 
 		offer.handleOffer();
-		offer.handleDeluxeOffer();
 	}
 
 	protected async handleNetworkTransaction() {

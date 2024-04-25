@@ -684,7 +684,11 @@
 
     {% section 'header' %}
 
-    {{ content_for_layout }}
+    <div class="wrapper">
+        <div class="wrapper__in">
+            {{ content_for_layout }}
+        </div>
+    </div>
 
     {% section 'footer' %}
 
