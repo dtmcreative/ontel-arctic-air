@@ -49,19 +49,19 @@ export default class OfferController extends CartController {
 		if (!offerCombobox) return;
 
 		const singleOffer = await this.products.getProductVariantBySku(
-			"AAPC1"
+			"AABPC"
 		);
 		const doubleOffer = await this.products.getProductVariantBySku(
-			"AAPC2"
+			"AABPCTV"
 		);
-		// const fee = await this.products.getProductVariantBySku("VOOM59FEE");
+		const fee = await this.products.getProductVariantBySku("AABPCFEE");
 
 		const changeToSingleOffer = (quantity: number) => {
 			this.updateItems({
 				updates: {
 					[singleOffer.id]: quantity,
 					[doubleOffer.id]: 0,
-					// [fee.id]: 0
+					[fee.id]: 0
 				}
 			});
 		};
@@ -71,7 +71,7 @@ export default class OfferController extends CartController {
 				updates: {
 					[singleOffer.id]: 0,
 					[doubleOffer.id]: quantity,
-					// [fee.id]: quantity
+					[fee.id]: quantity
 				}
 			});
 		};

@@ -2836,6 +2836,307 @@ address {
   margin-top: 1rem;
 }
 
+.status-screen {
+  --status-screen-background-color: hsla(0deg, 100%, 100%, 0.85);
+  --status-screen-font-color: black;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: fixed;
+  z-index: var(--status-screen-z-index, 10);
+}
+@media (prefers-color-scheme: dark) {
+  .status-screen {
+    --status-screen-background-color: hsla(0deg, 100%, 0%, 0.85);
+    --status-screen-font-color: white;
+  }
+}
+.status-screen, .status-screen[hidden] {
+  display: flex;
+}
+.status-screen[hidden] {
+  visibility: hidden;
+}
+.status-screen__output {
+  margin: 1em;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.status-screen__output::before, .status-screen__output::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+.status-screen__output::before {
+  content: attr(data-status-screen-output);
+  opacity: 0;
+  transform: translateY(20%);
+}
+.status-screen__output::after {
+  content: attr(data-status-screen-input);
+  opacity: 1;
+}
+.status-screen__output > output {
+  opacity: 0;
+}
+.status-screen__screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  background: var(--status-screen-background-color);
+  color: var(--status-screen-font-color);
+}
+.status-screen__status {
+  font-size: 1em;
+  width: 3em;
+  height: 3em;
+  position: relative;
+}
+.status-screen__status-positive, .status-screen__status-negative {
+  transition: 0.3s ease-in-out;
+}
+.status-screen__status-positive {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+.status-screen__status-negative {
+  opacity: 0;
+}
+.status-screen__circle-icon {
+  display: inline-flex;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  --checkmark-primary: #267706;
+  --checkmark-accent: #7ac142;
+  --checkmark-circle-fill: #eef0ed;
+  --checkmark-stroke: white;
+}
+.status-screen__circle-icon svg {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  stroke-width: 2;
+  stroke: var(--checkmark-stroke);
+  stroke-miterlimit: 10;
+  box-shadow: inset 0 0 0 var(--checkmark-accent);
+}
+.status-screen__circle-icon circle,
+.status-screen__circle-icon path {
+  stroke-width: 0.2rem;
+  transform-origin: center center;
+  fill: none;
+}
+.status-screen__circle-icon circle {
+  stroke: var(--checkmark-primary);
+}
+.status-screen__circle-icon path {
+  stroke: var(--checkmark-stroke);
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+.status-screen__circle-icon > svg {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.status-screen__cross {
+  flex: 0 0 auto;
+  width: 3em;
+  height: 3em;
+  display: block;
+  border: none;
+  background: none;
+  position: relative;
+  transform: scale(0.8);
+}
+.status-screen__cross::before, .status-screen__cross::after {
+  content: "";
+  width: 0.2em;
+  height: inherit;
+  background: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: transform 300ms ease-out 0.35s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-screen__cross::before, .status-screen__cross::after {
+    transition: none;
+  }
+}
+.status-screen__cross::before {
+  transform-origin: top right;
+  right: auto;
+}
+.status-screen__cross::after {
+  transform-origin: top left;
+  transition-delay: 0.7s;
+  left: auto;
+}
+.status-screen__cross::before {
+  transform: rotateZ(-45deg) scaleY(1.35);
+}
+.status-screen__cross::after {
+  transform: rotateZ(45deg) scaleY(1.35);
+}
+.status-screen__cross::before {
+  transform: rotateZ(-45deg) scaleY(0);
+}
+.status-screen__cross::after {
+  transform: rotateZ(45deg) scaleY(0);
+}
+@media (prefers-color-scheme: dark) {
+  .status-screen__cross {
+    color: #c3bdbd;
+  }
+}
+.status-screen__close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  transform: scale(0.5);
+}
+.status-screen__close:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.status-screen--is-hidden .status-screen__screen {
+  opacity: 0;
+}
+
+@keyframes rotate-checkmark-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.status-screen--is-busy .status-screen__circle-icon {
+  opacity: 1;
+  transform-origin: center center;
+  animation: rotate-checkmark-circle 1s cubic-bezier(0.32, 0.75, 0.83, 0.74) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-screen--is-busy .status-screen__circle-icon {
+    animation-timing-function: linear;
+  }
+}
+.status-screen--is-busy .status-screen__circle-icon circle {
+  stroke-dasharray: 53;
+}
+
+@keyframes fill-checkmark {
+  to {
+    box-shadow: inset 0 0 0 10em var(--checkmark-accent);
+  }
+}
+@keyframes scale-checkmark {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes stroke-checkmark {
+  to {
+    fill: none;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes stroke-checkmark-circle {
+  to {
+    fill: none;
+    stroke-dasharray: 0;
+  }
+}
+.status-screen--is-done .status-screen__cross::before {
+  transform: rotateZ(-45deg) scaleY(1.35);
+}
+.status-screen--is-done .status-screen__cross::after {
+  transform: rotateZ(45deg) scaleY(1.35);
+}
+.status-screen--is-done .status-screen__circle-icon {
+  opacity: 1;
+}
+.status-screen--is-done .status-screen__circle-icon svg {
+  animation: fill-checkmark 0.4s ease-in-out 0.4s forwards, scale-checkmark 0.3s ease-in-out 0.9s both;
+}
+.status-screen--is-done .status-screen__circle-icon circle {
+  animation: stroke-checkmark-circle 1s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.status-screen--is-done .status-screen__circle-icon path {
+  stroke-dashoffset: 0;
+}
+@supports (animation-name: stroke-checkmark) {
+  .status-screen--is-done .status-screen__circle-icon path {
+    stroke-dashoffset: 48;
+    animation: stroke-checkmark 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-screen--is-done .status-screen__circle-icon svg,
+.status-screen--is-done .status-screen__circle-icon circle,
+.status-screen--is-done .status-screen__circle-icon path {
+    animation-duration: 0s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+  }
+}
+
+.status-screen--is-problem .status-screen__cross::before {
+  transform: rotateZ(-45deg) scaleY(1.35);
+}
+.status-screen--is-problem .status-screen__cross::after {
+  transform: rotateZ(45deg) scaleY(1.35);
+}
+.status-screen--is-problem .status-screen__status-positive {
+  opacity: 0;
+  transform: translateY(50%);
+}
+.status-screen--is-problem .status-screen__status-negative {
+  opacity: 1;
+}
+
+@keyframes status-screen-fade-translate-text-out {
+  to {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+}
+@keyframes status-screen-fade-translate-text-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.status-screen--receive-text-input .status-screen__output::before {
+  opacity: 1;
+  transform: translateY(0);
+  animation: status-screen-fade-translate-text-out 0.3s ease-in-out forwards;
+}
+.status-screen--receive-text-input .status-screen__output::after {
+  opacity: 0;
+  transform: translateY(20%);
+  animation: status-screen-fade-translate-text-in 0.3s ease-in-out forwards;
+}
+
 .order {
   overflow: hidden;
 }
